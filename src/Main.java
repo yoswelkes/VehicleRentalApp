@@ -20,5 +20,7 @@ public class Main {
         car3.rentOut(customer1);
 
         System.out.println(car1.getIsRentedOut());
+        System.out.println(car1.getTopFiveRentalHistory());
+        System.out.println(customer1.getTotalRentalPrice());
     }
 }
