@@ -28,7 +28,7 @@ public class Vehicle {
 
             addToRentalHistory(rentingClient);
 
-            rentingClient.addToRentedVehicleList(this);
+             // rentingClient.addToRentedVehicleList(this);
         }
     }
 
@@ -38,6 +38,8 @@ public class Vehicle {
         setColor(color);
         setPricePerDay(pricePerDay);
         setType(type);
+
+        VehilceList.addToList(this);
     }
 
     public String getLicensePlate(){
@@ -87,6 +89,5 @@ public class Vehicle {
     public void setType(VehicleType type){
         this.type = type;
     }
-
 }
 

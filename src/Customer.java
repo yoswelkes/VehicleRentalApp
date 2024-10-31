@@ -36,17 +36,19 @@ public class Customer {
     }
 
     public void addToRentedVehicleList(String vehiclePlateNo, int rentedDays){
-        if (rentedHistory == null){
-            rentedHistory =  new HashMap<>();
+        if (rentalHistory == null){
+            rentalHistory =  new HashMap<>();
         }
-        rentedHistory.put(vehiclePlateNo, rentedDays);
+        rentalHistory.put(vehiclePlateNo, rentedDays);
     }
 
     public double getTotalRentalPrice(){
         double retVal = 0;
-        for (String vehicle : this.rentedHistory.keyset())
+        for (String licensePlate : this.rentalHistory.keySet())
         {
-            retVal += vehicle.getPricePerDay() *
+            retVal += VehilceList.getPricePerdayByPlateNumber(licensePlate) * (int) this.rentalHistory.get(licensePlate);
         }
+
+        return retVal;
     }
 }
