@@ -21,6 +21,13 @@ public class Vehicle {
         rentalHistory.add(rentingClient);
     }
 
+    private void removeRentalHistory(Customer rentingClient){
+        if (rentalHistory == null){
+            rentalHistory = new ArrayList<>();
+        }
+        rentalHistory.remove(rentingClient);
+    }
+
     public void rentOut(Customer rentingClient){
         if (!getIsRentedOut()) {
             setIsRentedOut(true);
@@ -32,6 +39,11 @@ public class Vehicle {
         }
     }
 
+    public void returnBack(){
+        setIsRentedOut(false);
+        setRentingClient(null);
+        removeRentalHistory(this.getRentingClient());
+    }
 
     public Vehicle(String licensePlate, String color, double pricePerDay, VehicleType type){
         setLicensePlate(licensePlate);

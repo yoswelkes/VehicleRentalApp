@@ -6,6 +6,19 @@ public class Main {
         Vehicle car3 =  new Vehicle("ABC", "blue", 122, VehicleType.Trucks);
 
 
-        System.out.println(car1.getLicensePlate());
+        Customer customer1 = new Customer("Yosief", "Kampala", 45);
+        Customer customer2 = new Customer("Guled", "Kampala", 40);
+
+        car1.rentOut(customer1);
+        car1.returnBack();
+
+        car1.rentOut(customer2);
+
+        car2.rentOut(customer1);
+        car2.returnBack();
+
+        car3.rentOut(customer1);
+
+        System.out.println(car1.getIsRentedOut());
     }
 }
